@@ -13,7 +13,7 @@
         let tieScore=0;
         const win='you win this round\n';
         const lose='you loose this round\n';
-        const draw='you draws with the computer\n';
+        const draw='you draws this round\n';
         console.log(game());
         console.log(`your final score is ${playerScore} wins ${compScore} loses ${tieScore} draws` );
 
@@ -39,6 +39,7 @@
                 tieScore++;
                 return draw;
             }
+            
 
         }
         function game()
@@ -48,14 +49,16 @@
                 playerSelection=prompt("choose rock, paper or scissors");
                 computerSelection=computerPlay();
                 console.log(playRound(playerSelection,computerSelection));
+                console.log(`score:
+                player:${playerScore}           computer:${compScore}`);
             }
             if(playerScore>compScore)
             {
-               return 'you win this game';
+               return 'you have won this game';
             }
             else if(compScore>playerScore)
             {
-                return'you lose this game';
+                return 'you have lost this game';
             }
             else
             {
