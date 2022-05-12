@@ -12,7 +12,13 @@
         <button id="paper">PAPER</button>
         <button id="scissors">SCISSORS</button>
     </div>
+    <div id="choice"></div>
+    <div id="result"></div>
     <script>
+
+        const win='Player wins';
+        const lose='Computer wins';
+        const draw='Both draws';
 
         const buttons = document.querySelectorAll('button');
         buttons.forEach((button) => {
@@ -20,22 +26,21 @@
 
 let playerSelection=button.id;
 computerSelection=computerPlay();
-console.log(playRound(playerSelection,computerSelection));
+
+const choice = document.querySelector('#choice');
+const playerCompChoice=document.createElement('H4');
+playerCompChoice.textContent = `Player : ${playerSelection}                Computer : ${computerSelection}`;
+choice.append(playerCompChoice);
+
+const result=document.querySelector('#result');
+      const htwo=document.createElement('H2');
+      htwo.textContent = playRound(playerSelection,computerSelection);
+      result.append(htwo);
+
 
             });
         })
         
-
-
-        // let compScore=0;
-        // let playerScore=0;
-        // let tieScore=0;
-        const win='you win this round\n';
-        const lose='you loose this round\n';
-        const draw='you draw this round\n';
-        // console.log(game());
-      
-
         function computerPlay()
         {
             let random=['rock','paper','scissors'];
@@ -43,47 +48,13 @@ console.log(playRound(playerSelection,computerSelection));
         }
         function playRound(playerSelection,computerSelection)
         {
-            console.log(`your choice:${playerSelection}             computer's choice:${computerSelection}`)
-            if(playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper")
-            {
-                // playerScore++;
-                return win;
-            }
-            else if(playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="scissors" && computerSelection=="rock" || playerSelection=="rock" && computerSelection=="paper")
-            {
-                // compScore++;
-                return lose;
-            }
-            else
-            {
-                // tieScore++;
-                return draw;
-            }
-            
 
+            if(playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper") return win;
+            
+            else if(playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="scissors" && computerSelection=="rock" || playerSelection=="rock" && computerSelection=="paper") return lose;
+            
+            else return draw;
          }
-        // function game()
-        // {
-            
-        //         playerSelection=prompt("choose rock, paper or scissors");
-        //         computerSelection=computerPlay();
-        //         console.log(playRound(playerSelection,computerSelection));
-        //         console.log(`score:
-        //         player:${playerScore}           computer:${compScore}`);
-            
-        //     if(playerScore>compScore)
-        //     {
-        //        return 'you have won this game';
-        //     }
-        //     else if(compScore>playerScore)
-        //     {
-        //         return 'you have lost this game';
-        //     }
-        //     else
-        //     {
-        //         return 'the game is tie';
-        //     }
-        // }
 
 
     </script>
