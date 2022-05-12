@@ -44,14 +44,13 @@
         }
         function game()
         {
-            for(let i=0;i<5;i++)
-            {
+            
                 playerSelection=prompt("choose rock, paper or scissors");
                 computerSelection=computerPlay();
                 console.log(playRound(playerSelection,computerSelection));
                 console.log(`score:
                 player:${playerScore}           computer:${compScore}`);
-            }
+            
             if(playerScore>compScore)
             {
                return 'you have won this game';
