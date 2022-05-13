@@ -21,50 +21,6 @@
     </div>
 
     
-    <!-- <script>
-
-        const win='Player wins';
-        const lose='Computer wins';
-        const draw='Both draws';
-
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-
-let playerSelection=button.id;
-computerSelection=computerPlay();
-
-const choice = document.querySelector('#choice');
-const playerCompChoice=document.createElement('H4');
-playerCompChoice.textContent = `Player : ${playerSelection}                Computer : ${computerSelection}`;
-choice.append(playerCompChoice);
-
-const result=document.querySelector('#result');
-      const htwo=document.createElement('H2');
-      htwo.textContent = playRound(playerSelection,computerSelection);
-      result.append(htwo);
-
-
-            });
-        })
-        
-        function computerPlay()
-        {
-            let random=['rock','paper','scissors'];
-            return random[Math.floor(Math.random() *3)];
-        }
-        function playRound(playerSelection,computerSelection)
-        {
-
-            if(playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper") return win;
-            
-            else if(playerSelection=="paper" && computerSelection=="scissors" || playerSelection=="scissors" && computerSelection=="rock" || playerSelection=="rock" && computerSelection=="paper") return lose;
-            
-            else return draw;
-         }
-
-
-    </script> -->
-
+  
 </body>
 </html>
